@@ -5,7 +5,8 @@ function MainContent(){
   return (<main>
     <div className="fullCard">
       <div className="fullCard__video">
-        <img src="./assets/img/fakevid.jpg" alt="fakevid" />
+        <video src="./assets/vids/Hollow Knight.mp4" controls autoplay loop preload="auto">
+        </video>
       </div>
       <div className="fullCard__platforms-metascore">
         <div className="platforms">
@@ -20,9 +21,12 @@ function MainContent(){
       <div className="fullCard__Title">
         <h2>Hollow Knight</h2>
       </div>
-      <div className="fullCard__likes">
-        <img id='likes' src="./assets/ico/heart-like.svg" alt="like" />
-        <p className="likesCounter">232</p>
+      <div class="fullCard__likes-viewMore">
+        <div className="fullCard__likes">
+          <img id='likes' src="./assets/ico/heart-like.svg" alt="like" />
+          <p className="likesCounter">232</p>
+        </div>
+        <a href="#" className="viewMore">View more</a>
       </div>
       <article className="fullCard__article">
         <div className="article__releaseDate">

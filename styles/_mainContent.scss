@@ -6,7 +6,7 @@ main{
   font-family: var(--ff-Kanit);
 
   .fullCard{
-    margin-top:5%;
+    margin-block:2%;
     display: flex;
     flex-direction: column;
     width: 350px;
@@ -18,8 +18,8 @@ main{
 
     .fullCard__platforms-metascore,
     .fullCard__Title,
-    .fullCard__likes,
-    .fullCard__article{
+    .fullCard__article,
+    .fullCard__likes-viewMore{
       margin-inline:1rem;
     }
 
@@ -44,33 +44,41 @@ main{
     .fullCard__Title{
       text-align: center;
     }
+    .fullCard__likes-viewMore{
+      display:flex;
+      justify-content: space-between;
 
-    .fullCard__likes{
-      display:inline-flex;
-      padding-inline:0.5rem;
-      justify-content: space-around;
-      height:25px;
-      width:min-content;
-      gap:0.5rem;
-      border-radius:5px;
-      box-shadow: rgba(150, 150, 157, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-      margin-bottom:1rem;
-
-        #likes{
-          padding-left: 0.5rem;
-          padding-block:0.2rem;
-          filter: var(--filter-lightgrey); 
-        }
-        p{
-          padding-right: 0.5rem;
-          color:black;
-          filter: var(--filter-lightgrey); 
-        }
-        
-        #likes:hover{
-          filter: var(--filter-pink);
-        }
-
+      .viewMore{
+        visibility: visible;
+        color:greenyellow;
+        font-size: 14px;
+      }
+      .fullCard__likes{
+        display:inline-flex;
+        padding-inline:10px;
+        justify-content: space-between;
+        height:25px;
+        width:min-content;
+        gap:10px;
+        border-radius:5px;
+        box-shadow: rgba(150, 150, 157, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        margin-bottom:1rem;
+  
+          #likes{
+            padding-block:0.2rem;
+            filter: var(--filter-lightgrey); 
+          }
+          p{
+            padding-right: 20px;
+            color:black;
+            filter: var(--filter-lightgrey); 
+          }
+          
+          #likes:hover{
+            filter: var(--filter-pink);
+          }
+  
+      }
     }
     .fullCard__article{
       
@@ -78,7 +86,7 @@ main{
       opacity: 0;
       visibility: hidden;
       max-height: 0px;
-      transition:  opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+      transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
 
        h4{
         color:rgb(150, 150, 150);
@@ -103,10 +111,24 @@ main{
   }
   .fullCard:hover{
     .fullCard__article{
-      max-height: 100%;
+      max-height: none;
       opacity: 1;
       visibility: visible; 
       margin-bottom:1rem;
+    }
+  }
+}
+
+@media (min-width: 1440px){
+  main{
+    .fullCard{
+
+      .fullCard__likes-viewMore{
+    
+        .viewMore{
+          visibility: hidden;
+        }
+      }
     }
   }
 }
