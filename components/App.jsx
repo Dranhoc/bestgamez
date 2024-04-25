@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import Api from './Api.jsx';
+import Header from './Header.jsx';
 import MainContent from './MainContent.jsx';
-// import Header from './Header.jsx';
+
 
 // Api()
 
 function App() {
 
   return <>
-     {/* <Header /> */}
+    <Header />
     <MainContent />
   </>
   
