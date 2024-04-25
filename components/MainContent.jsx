@@ -7,16 +7,21 @@ function MainContent(){
       <div className="fullCard__video">
         <img src="./assets/img/fakevid.jpg" alt="fakevid" />
       </div>
-      <div className="fullCard__platforms">
-        <img src="./assets/ico/PC.svg" alt="PC" />
-        <img src="./assets/ico/playstation.svg" alt="PS" />
-        <img src="./assets/ico/xbox.svg" alt="xbox" />
+      <div className="fullCard__platforms-metascore">
+        <div className="platforms">
+          <img src="./assets/ico/PC.svg" alt="PC" />
+          <img src="./assets/ico/playstation.svg" alt="PS" />
+          <img src="./assets/ico/xbox.svg" alt="xbox" />
+        </div>
+        <div className="metascore">
+          <p>92</p>
+        </div>
       </div>
       <div className="fullCard__Title">
         <h2>Hollow Knight</h2>
       </div>
       <div className="fullCard__likes">
-        <img src="./assets/ico/heart-like.svg" alt="like" />
+        <img id='likes' src="./assets/ico/heart-like.svg" alt="like" />
         <p className="likesCounter">232</p>
       </div>
       <article className="fullCard__article">
@@ -26,7 +31,7 @@ function MainContent(){
         </div>
         <hr />
         <div className="article__genres">
-          <h4>Genres</h4>
+          <h4>Genres :</h4>
           <div className="article__genres--genres">
             <p>Action</p>
             <p>RPG</p>
