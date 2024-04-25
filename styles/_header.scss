@@ -1,24 +1,47 @@
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 24px 40px;
     color: white;
 
     ul {
         display: flex;
         justify-content: space-between;
-        
+        padding: 0px;
+        width: 100%;
+    }
+
+    .logo {
+        margin-right: 200px;
+        letter-spacing: 5px;
+        font-weight: 800;
+    }
+
+    form {
+        width: 100%;
     }
 
     .searchBar {
-        margin: 0 16px;
         height: 44px;
         width: 100%;
-        min-width: 200px;
+        border-radius: 30px;
+        border: none;
+        background-color: #515151;
+        cursor: text;
+        padding: 0 20px;
     }
 
+    .searchBar::placeholder {
+        color: #BBBBBB;
+      }
+
     .navBar {
-        
+        display: flex;
+        gap: 20px;
+        width: 300px;
+        margin-left: 50px;
+        text-transform: uppercase;
     }
 }
+
+

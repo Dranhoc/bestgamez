@@ -173,20 +173,46 @@ main .fullCard:hover .fullCard__article {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 24px 40px;
   color: white;
 }
 header ul {
   display: flex;
   justify-content: space-between;
+  padding: 0px;
+  width: 100%;
+}
+header .logo {
+  margin-right: 200px;
+  letter-spacing: 5px;
+  font-weight: 800;
+}
+header form {
+  width: 100%;
 }
 header .searchBar {
-  margin: 0 16px;
   height: 44px;
   width: 100%;
-  min-width: 200px;
+  border-radius: 30px;
+  border: none;
+  background-color: #515151;
+  cursor: text;
+  padding: 0 20px;
 }
+header .searchBar::-moz-placeholder {
+  color: #BBBBBB;
+}
+header .searchBar::placeholder {
+  color: #BBBBBB;
+}
+header .navBar {
+  display: flex;
+  gap: 20px;
+  width: 300px;
+  margin-left: 50px;
+  text-transform: uppercase;
+}
+
 body {
   background-color: #242424;
 }/*# sourceMappingURL=style.css.map */
