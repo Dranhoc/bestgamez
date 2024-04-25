@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import MenuBurger from './header/MenuBurger';
 
 function Header() {
     const [searchTerm, setSearchTerm] = useState('');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     function handleSubmit() {
         //Faire quelque chose avec la recherche
@@ -17,6 +19,10 @@ function Header() {
             handleSubmit(e);
         };
     };
+
+    function toggleMenu() {
+        setIsMenuOpen(!isMenuOpen);
+    }
 
     return (
         <header>
@@ -42,11 +48,7 @@ function Header() {
                     <li>API</li>
                 </ul> 
             </nav>
-            <div className="containerBurger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+            <MenuBurger/>
         </header>
     );
 };
