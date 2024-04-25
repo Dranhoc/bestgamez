@@ -20,15 +20,17 @@ function MainContent(){
         <p className="likesCounter">232</p>
       </div>
       <article className="fullCard__article">
-        <div className="releaseDate">
+        <div className="article__releaseDate">
           <h4>Release date :</h4>
           <p>30 Nov 2024</p>
         </div>
         <hr />
-        <div className="genres">
+        <div className="article__genres">
           <h4>Genres</h4>
-          <p>Action</p>
-          <p>RPG</p>
+          <div className="article__genres--genres">
+            <p>Action</p>
+            <p>RPG</p>
+          </div>
         </div>
       </article>
     </div>
