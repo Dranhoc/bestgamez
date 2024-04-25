@@ -156,7 +156,8 @@ main .fullCard .fullCard__article .article__genres--genres {
 header {
   display: flex;
   align-items: center;
-  padding: 24px 40px;
+  padding-block: 20px;
+  margin-inline: 7%;
   color: white;
 }
 header ul {
@@ -165,16 +166,17 @@ header ul {
   padding: 0px;
   width: 100%;
 }
-header .logo {
-  margin-right: 200px;
-  letter-spacing: 5px;
-  font-weight: 800;
+header .logoText {
+  display: None;
 }
 header form {
   width: 100%;
 }
+header .logoImage {
+  width: 50px;
+}
 header .searchBar {
-  height: 44px;
+  height: 30px;
   width: 100%;
   border-radius: 30px;
   border: none;
@@ -189,11 +191,18 @@ header .searchBar::placeholder {
   color: #BBBBBB;
 }
 header .navBar {
+  display: None;
+}
+header .containerBurger {
   display: flex;
-  gap: 20px;
-  width: 300px;
-  margin-left: 50px;
-  text-transform: uppercase;
+  flex-direction: column;
+  width: 30px;
+  gap: 5px;
+  margin-left: 20px;
+}
+header .containerBurger div {
+  border: 1px solid white;
+  width: 100%;
 }
 
 body {

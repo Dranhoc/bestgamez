@@ -1,7 +1,8 @@
 header {
     display: flex;
     align-items: center;
-    padding: 24px 40px;
+    padding-block: 20px;
+    margin-inline: 7%;
     color: white;
 
     ul {
@@ -11,18 +12,25 @@ header {
         width: 100%;
     }
 
-    .logo {
-        margin-right: 200px;
-        letter-spacing: 5px;
-        font-weight: 800;
+    .logoText {
+        display: None;
+        // Desktop
+        // margin-right: 20px;
+        // letter-spacing: 5px;
+        // font-weight: 800;
     }
 
     form {
         width: 100%;
     }
 
+    .logoImage {
+        width: 50px;
+    }
+
     .searchBar {
-        height: 44px;
+        height: 30px;
+        //height: 44px; ==> Desktop
         width: 100%;
         border-radius: 30px;
         border: none;
@@ -36,11 +44,28 @@ header {
       }
 
     .navBar {
+        display: None;
+        // Desktop
+        // display: flex;
+        // gap: 20px;
+        // width: 300px;
+        // margin-left: 50px;
+        // text-transform: uppercase;
+    }
+
+    .containerBurger {
+        // Desktop
+        // display: None;
         display: flex;
-        gap: 20px;
-        width: 300px;
-        margin-left: 50px;
-        text-transform: uppercase;
+        flex-direction: column;
+        width: 30px;
+        gap: 5px;
+        margin-left: 20px;
+    }
+
+    .containerBurger div{
+        border: 1px solid white;
+        width: 100%;
     }
 }
 

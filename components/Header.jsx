@@ -20,7 +20,11 @@ function Header() {
 
     return (
         <header>
-            <p className='logo'>RAWG</p>
+            <div className="containerLogo">
+                <img src="assets/ico/logo.svg" alt="Logo Joystick" classnName="logoImage" />
+                <p className='logoText'>BestGamez</p>
+            </div>
+            
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -38,6 +42,11 @@ function Header() {
                     <li>API</li>
                 </ul> 
             </nav>
+            <div className="containerBurger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </header>
     );
 };
