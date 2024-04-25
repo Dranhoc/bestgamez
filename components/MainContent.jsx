@@ -37,6 +37,13 @@ function MainContent(){
             <p>RPG</p>
           </div>
         </div>
+          <hr />
+          <div className="article__chart">
+          <h4>Chart :</h4>
+          <div className="article__genres--chart">
+            <p>#1 Top 2023</p>
+          </div>
+        </div>
       </article>
     </div>
   </main>

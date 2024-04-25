@@ -2,7 +2,7 @@ main{
   display : flex;
   justify-content: center;
   margin-inline: 7%;
-  color : white;
+  color : lightgray;
   font-family: var(--ff-Kanit);
 
   .fullCard{
@@ -53,7 +53,8 @@ main{
       width:min-content;
       gap:0.5rem;
       border-radius:5px;
-      box-shadow: rgba(150, 150, 157, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; 
+      box-shadow: rgba(150, 150, 157, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      margin-bottom:1rem;
 
         #likes{
           padding-left: 0.5rem;
@@ -62,15 +63,24 @@ main{
         }
         p{
           padding-right: 0.5rem;
+          color:black;
+          filter: var(--filter-lightgrey); 
+        }
+        
+        #likes:hover{
+          filter: var(--filter-pink);
         }
 
     }
     .fullCard__article{
-       margin-block:1rem;
-       line-height: 30px;
+      
+      line-height: 30px;
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0px;
+      transition:  opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
 
        h4{
-        // padding-block:auto;
         color:rgb(150, 150, 150);
         font-weight: 300;
         font-size:14px
@@ -80,7 +90,8 @@ main{
        }
 
        .article__releaseDate,
-       .article__genres{
+       .article__genres,
+       .article__chart{
          display:flex;
          justify-content: space-between;
        }
@@ -88,6 +99,14 @@ main{
          display:flex;
          gap:0.3rem; 
        }
+    }
+  }
+  .fullCard:hover{
+    .fullCard__article{
+      max-height: 100%;
+      opacity: 1;
+      visibility: visible; 
+      margin-bottom:1rem;
     }
   }
 }
