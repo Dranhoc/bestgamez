@@ -63,7 +63,23 @@ li {
   list-style-type: none;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 40px;
+  color: white;
+}
+header ul {
+  display: flex;
+  justify-content: space-between;
+}
+header .searchBar {
+  margin: 0 16px;
+  height: 44px;
+  width: 100%;
+  min-width: 200px;
+}
 body {
   background-color: #242424;
-  color:white;
 }/*# sourceMappingURL=style.css.map */
