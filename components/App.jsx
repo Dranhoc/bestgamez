@@ -5,7 +5,10 @@ Api()
 
 function App() {
 
-  return <div><h1>SALUT AURELIANE COMMENT CA VA ?</h1></div>
+  return <>
+    <Header />
+    <MainContent />
+  </>
 
 }
 export default App
