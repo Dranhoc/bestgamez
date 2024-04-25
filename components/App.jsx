@@ -11,6 +11,9 @@ function App() {
   return <>
     <Header />
     <MainContent />
+    <MainContent />
+    <MainContent />
+    <MainContent />
   </>
   
 };
