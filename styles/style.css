@@ -63,120 +63,6 @@ li {
   list-style-type: none;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  margin-inline: 7%;
-  color: lightgray;
-  font-family: var(--ff-Kanit);
-}
-main .fullCard {
-  margin-block: 2%;
-  display: flex;
-  flex-direction: column;
-  width: 350px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 10px;
-  background-color: #2c2c2c;
-  overflow: hidden;
-  gap: 0.5rem;
-}
-main .fullCard .fullCard__platforms-metascore,
-main .fullCard .fullCard__Title,
-main .fullCard .fullCard__article,
-main .fullCard .fullCard__likes-viewMore {
-  margin-inline: 1rem;
-}
-main .fullCard .fullCard__platforms-metascore {
-  display: flex;
-  height: 25px;
-  margin-top: 1rem;
-}
-main .fullCard .fullCard__platforms-metascore .platforms {
-  display: flex;
-  gap: 0.5rem;
-  filter: var(--filter-lightgrey);
-}
-main .fullCard .fullCard__platforms-metascore .metascore {
-  margin-block: auto;
-  padding-inline: 0.5rem;
-  border: solid 0.8px greenyellow;
-  border-radius: 4px;
-  color: greenyellow;
-}
-main .fullCard .fullCard__Title {
-  text-align: center;
-}
-main .fullCard .fullCard__likes-viewMore {
-  display: flex;
-  justify-content: space-between;
-}
-main .fullCard .fullCard__likes-viewMore .viewMore {
-  visibility: visible;
-  color: greenyellow;
-  font-size: 14px;
-}
-main .fullCard .fullCard__likes-viewMore .fullCard__likes {
-  display: inline-flex;
-  padding-inline: 10px;
-  justify-content: space-between;
-  height: 25px;
-  width: -moz-min-content;
-  width: min-content;
-  gap: 10px;
-  border-radius: 5px;
-  box-shadow: rgba(150, 150, 157, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  margin-bottom: 1rem;
-}
-main .fullCard .fullCard__likes-viewMore .fullCard__likes #likes {
-  padding-block: 0.2rem;
-  filter: var(--filter-lightgrey);
-}
-main .fullCard .fullCard__likes-viewMore .fullCard__likes p {
-  padding-right: 20px;
-  color: black;
-  filter: var(--filter-lightgrey);
-}
-main .fullCard .fullCard__likes-viewMore .fullCard__likes #likes:hover {
-  filter: var(--filter-pink);
-}
-main .fullCard .fullCard__article {
-  line-height: 30px;
-  opacity: 0;
-  visibility: hidden;
-  max-height: 0px;
-  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-}
-main .fullCard .fullCard__article h4 {
-  color: rgb(150, 150, 150);
-  font-weight: 300;
-  font-size: 14px;
-}
-main .fullCard .fullCard__article p {
-  font-size: 15px;
-}
-main .fullCard .fullCard__article .article__releaseDate,
-main .fullCard .fullCard__article .article__genres,
-main .fullCard .fullCard__article .article__chart {
-  display: flex;
-  justify-content: space-between;
-}
-main .fullCard .fullCard__article .article__genres--genres {
-  display: flex;
-  gap: 0.3rem;
-}
-main .fullCard:hover .fullCard__article {
-  max-height: none;
-  opacity: 1;
-  visibility: visible;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 1440px) {
-  main .fullCard .fullCard__likes-viewMore .viewMore {
-    visibility: hidden;
-  }
-}
 :root {
   --ff-Kanit: "Kanit", sans-serif;
   --filter-lightgrey: invert(100%) sepia(0%) saturate(2323%) hue-rotate(187deg) brightness(110%) contrast(69%);
@@ -246,4 +132,119 @@ header .containerBurger {
 header .containerBurger div {
   border: 1px solid white;
   width: 100%;
+}
+
+.mainContent {
+  display: flex;
+  justify-content: center;
+  margin-inline: 7%;
+  color: lightgray;
+  font-family: var(--ff-Kanit);
+}
+.mainContent .fullCard {
+  margin-block: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  background-color: #2c2c2c;
+  overflow: hidden;
+  gap: 0.5rem;
+}
+.mainContent .fullCard .fullCard__platforms-metascore,
+.mainContent .fullCard .fullCard__Title,
+.mainContent .fullCard .fullCard__article,
+.mainContent .fullCard .fullCard__likes-viewMore {
+  margin-inline: 1rem;
+}
+.mainContent .fullCard .fullCard__platforms-metascore {
+  display: flex;
+  height: 25px;
+  margin-top: 1rem;
+}
+.mainContent .fullCard .fullCard__platforms-metascore .platforms {
+  display: flex;
+  gap: 0.5rem;
+  filter: var(--filter-lightgrey);
+}
+.mainContent .fullCard .fullCard__platforms-metascore .metascore {
+  margin-block: auto;
+  padding-inline: 0.5rem;
+  border: solid 0.8px greenyellow;
+  border-radius: 4px;
+  color: greenyellow;
+}
+.mainContent .fullCard .fullCard__Title {
+  text-align: center;
+}
+.mainContent .fullCard .fullCard__likes-viewMore {
+  display: flex;
+  justify-content: space-between;
+}
+.mainContent .fullCard .fullCard__likes-viewMore .viewMore {
+  visibility: visible;
+  color: greenyellow;
+  font-size: 14px;
+}
+.mainContent .fullCard .fullCard__likes-viewMore .fullCard__likes {
+  display: inline-flex;
+  padding-inline: 10px;
+  justify-content: space-between;
+  height: 25px;
+  width: -moz-min-content;
+  width: min-content;
+  gap: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(150, 150, 157, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  margin-bottom: 1rem;
+}
+.mainContent .fullCard .fullCard__likes-viewMore .fullCard__likes #likes {
+  padding-block: 0.2rem;
+  filter: var(--filter-lightgrey);
+}
+.mainContent .fullCard .fullCard__likes-viewMore .fullCard__likes p {
+  padding-right: 20px;
+  color: black;
+  filter: var(--filter-lightgrey);
+}
+.mainContent .fullCard .fullCard__likes-viewMore .fullCard__likes #likes:hover {
+  filter: var(--filter-pink);
+}
+.mainContent .fullCard .fullCard__article {
+  line-height: 30px;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0px;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+.mainContent .fullCard .fullCard__article h4 {
+  color: rgb(150, 150, 150);
+  font-weight: 300;
+  font-size: 14px;
+}
+.mainContent .fullCard .fullCard__article p {
+  font-size: 15px;
+}
+.mainContent .fullCard .fullCard__article .article__releaseDate,
+.mainContent .fullCard .fullCard__article .article__genres,
+.mainContent .fullCard .fullCard__article .article__chart {
+  display: flex;
+  justify-content: space-between;
+}
+.mainContent .fullCard .fullCard__article .article__genres--genres {
+  display: flex;
+  gap: 0.3rem;
+}
+.mainContent .fullCard:hover .fullCard__article {
+  max-height: none;
+  opacity: 1;
+  visibility: visible;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1440px) {
+  .mainContent .fullCard .fullCard__likes-viewMore .viewMore {
+    visibility: hidden;
+  }
 }/*# sourceMappingURL=style.css.map */

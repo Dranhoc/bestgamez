@@ -1,4 +1,4 @@
-main{
+.mainContent{
   display : flex;
   justify-content: center;
   margin-inline: 7%;
@@ -120,7 +120,7 @@ main{
 }
 
 @media (min-width: 1440px){
-  main{
+  .mainContent{
     .fullCard{
 
       .fullCard__likes-viewMore{
