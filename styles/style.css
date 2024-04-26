@@ -106,6 +106,8 @@ header form .searchBar {
   padding: 0 20px;
   outline: none;
   color: white;
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
 }
 header form .searchBar::-moz-placeholder {
   color: #BBBBBB;
@@ -113,10 +115,10 @@ header form .searchBar::-moz-placeholder {
 header form .searchBar::placeholder {
   color: #BBBBBB;
 }
-header .navBar {
+header .menu {
   display: None;
 }
-header .navBar ul {
+header .menu ul {
   display: flex;
   justify-content: space-between;
   padding: 0px;

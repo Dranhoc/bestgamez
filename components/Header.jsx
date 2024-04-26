@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import MenuBurger from './header/MenuBurger';
+import React, { useState, useTransition } from 'react';
 
 function Header() {
     const [searchTerm, setSearchTerm] = useState('');
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [burgerClass, setBurgerClass] = useState("containerBurger unclicked");
+    const [menuClass, setMenuClass] = useState("menu hidden");
+    const [isMenuClicked, setIsMenuClicked] = useState(false);
 
     function handleSubmit() {
         //Faire quelque chose avec la recherche
@@ -21,9 +22,12 @@ function Header() {
     };
 
     function toggleMenu() {
-        setIsMenuOpen(!isMenuOpen);
+        if(!isMenuClicked) {
+            setBurgerClass("containerBurger clicked");
+        }
     }
 
+   
     return (
         <header>
             <div className="containerLogo">
@@ -41,14 +45,20 @@ function Header() {
                     onKeyDown={handleKeyPress}
                     placeholder="Search for games"/>
             </form>
-            <nav className="navBar">
+
+            <div className={burgerClass} onClick={toggleMenu}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            
+            <nav className={menuClass}>
                 <ul>
                     <li>Log in</li>
                     <li>Sign up</li>
                     <li>API</li>
                 </ul> 
             </nav>
-            <MenuBurger/>
         </header>
     );
 };
