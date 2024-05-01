@@ -31,7 +31,7 @@ function Header() {
     return (
         <header>
             <div className="containerLogo">
-                <img src="assets/ico/logo.svg" alt="Logo Joystick" classnName="logoImage" />
+                <img src="assets/ico/logo.svg" alt="Logo Joystick" className="logoImage" />
                 <p className='logoText'>BestGamez</p>
             </div>
             

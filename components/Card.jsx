@@ -1,13 +1,12 @@
-import Api from './Api.jsx'
 
-function Card(){
+
+function Card({ gameName, backgroundImage, metacritic, suggestionsCount} ){
 
   return (
   <section className='mainContent'>
   <div className="fullCard">
-      <div className="fullCard__video">
-        <video src="./assets/vids/Hollow Knight.mp4" controls>
-        </video>
+      <div className="fullCard__image">
+        <img src= {backgroundImage} alt={ gameName + ' picture' } />
       </div>
       <div className="fullCard__platforms-metascore">
         <div className="platforms">
@@ -16,16 +15,16 @@ function Card(){
           <img src="./assets/ico/xbox.svg" alt="xbox" />
         </div>
         <div className="metascore">
-          <p>92</p>
+          <p>{metacritic}</p>
         </div>
       </div>
       <div className="fullCard__Title">
-        <h2>Hollow Knight</h2>
+        <h2>{ gameName }</h2>
       </div>
-      <div class="fullCard__likes-viewMore">
+      <div className="fullCard__likes-viewMore">
         <div className="fullCard__likes">
           <img id='likes' src="./assets/ico/heart-like.svg" alt="like" />
-          <p className="likesCounter">232</p>
+          <p className="likesCounter">{suggestionsCount}</p>
         </div>
         <a href="#" className="viewMore">View more</a>
       </div>
