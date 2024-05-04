@@ -8,7 +8,7 @@ function Api() {
   const myKey = "key=13a14486a9a544b2b8adbff1d336d9ad";
 
   useEffect(() => {
-    axios.get(`https://api.rawg.io/api/games?${myKey}&page=2`)
+    axios.get(`https://api.rawg.io/api/games?${myKey}&page=1`)
       .then((res) => {
         const newData = [];
         res.data.results.forEach(data => {
@@ -24,7 +24,8 @@ function Api() {
   }, []);
 
   return (
-    <>
+    
+    <section className="main__container">
       {gameData.map((data, index) => (
         <Card
           key={index}
@@ -34,7 +35,7 @@ function Api() {
           suggestionsCount={data.suggestionsCount}
         />
       ))}
-    </>
+    </section>
   );
 }
 

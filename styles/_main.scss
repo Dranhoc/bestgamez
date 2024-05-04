@@ -10,6 +10,14 @@
 
 body {
   background-color: #242424;
-  height:100vh;
+  // height:100vh;
   
+}
+
+.main__container{
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: 7%;
+  justify-content: center;
+
 }

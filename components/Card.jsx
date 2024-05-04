@@ -3,7 +3,7 @@
 function Card({ gameName, backgroundImage, metacritic, suggestionsCount} ){
 
   return (
-  <section className='mainContent'>
+  <div className='fullCard__container'>
   <div className="fullCard">
       <div className="fullCard__image">
         <img src= {backgroundImage} alt={ gameName + ' picture' } />
@@ -50,7 +50,7 @@ function Card({ gameName, backgroundImage, metacritic, suggestionsCount} ){
         </div>
       </article>
   </div>
-  </section>
+  </div>
 
   )
 }
