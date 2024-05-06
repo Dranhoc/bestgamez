@@ -4,12 +4,17 @@ import Card from "./Card.jsx"
 
 function Api() {
   const [gameData, setGameData] = useState([]);
-  const [genres, setGenres] = useState([]);
 
   const myKey = "key=13a14486a9a544b2b8adbff1d336d9ad";
+  let param1 = "";
+  let param2 = "";
+  let param3 = "";
+
+  // pour tester les param
+  param1 = "&page=2"
 
   useEffect(() => {
-    axios.get(`https://api.rawg.io/api/games?${myKey}&page=2`)
+    axios.get(`https://api.rawg.io/api/games?${myKey}${param1}${param2}${param3}`)
       .then((res) => {
         const newData = [];
         res.data.results.forEach(data => {
@@ -20,9 +25,11 @@ function Api() {
             suggestionsCount: data.suggestions_count,
             releaseDate: data.released,
             rating:data.rating*4 + "/20",
-            genres: data.genres.map(genre => genre.name + " ")
+            genres: data.genres.map(genre => genre.name + " "),
+            platforms: data.parent_platforms.map(platform => platform.platform.name)
           });
           setGameData(newData);
+         
           
         });
       });
@@ -36,12 +43,13 @@ function Api() {
         <Card
           key={index}
           gameName={data.gameName}
-          metacritic={data.metacritic}
+          metacritic={data.metacritic === null ? "NA" : data.metacritic}
           backgroundImage={data.backgroundImage}
           suggestionsCount={data.suggestionsCount}
           releaseDate={data.releaseDate}
           genres={data.genres}
           rating={data.rating}
+          platforms={data.platforms} 
         />
       ))}
     </section>
