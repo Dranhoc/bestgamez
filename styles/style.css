@@ -131,17 +131,15 @@ header .menu ul {
   width: 100%;
 }
 header .containerBurger {
-  display: flex;
-  flex-direction: column;
   width: 40px;
-  gap: 7px;
   margin-left: 20px;
 }
-header .containerBurger div {
-  border: 1px solid white;
-  width: 100%;
+header .containerBurger a {
+  text-decoration: none;
 }
-
+header .containerBurger .navDesktop {
+  display: none;
+}
 .fullCard__container {
   display: flex;
   justify-content: center;

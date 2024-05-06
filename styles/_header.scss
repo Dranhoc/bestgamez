@@ -68,15 +68,21 @@ header {
     .containerBurger {
         // Desktop
         // display: None;
-        display: flex;
-        flex-direction: column;
         width: 40px;
-        gap: 7px;
         margin-left: 20px;
 
-        div {
-            border: 1px solid white;
-            width: 100%;
+        a {
+            text-decoration: none;
+        }
+
+        .navDesktop {
+            display: none;
+        }
+
+        .navMobile {
+            .hamburger-react {
+                
+            }
         }
     }
     

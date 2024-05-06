@@ -1,10 +1,9 @@
-import React, { useState, useTransition } from 'react';
+import React, { useState } from 'react';
+import NavDesktop from './NavDesktop.jsx';
+import NavMobile from './NavMobile.jsx';
 
 function Header() {
     const [searchTerm, setSearchTerm] = useState('');
-    const [burgerClass, setBurgerClass] = useState("containerBurger unclicked");
-    const [menuClass, setMenuClass] = useState("menu hidden");
-    const [isMenuClicked, setIsMenuClicked] = useState(false);
 
     function handleSubmit() {
         //Faire quelque chose avec la recherche
@@ -20,13 +19,6 @@ function Header() {
             handleSubmit(e);
         };
     };
-
-    function toggleMenu() {
-        if(!isMenuClicked) {
-            setBurgerClass("containerBurger clicked");
-        }
-    }
-
    
     return (
         <header>
@@ -46,18 +38,15 @@ function Header() {
                     placeholder="Search for games"/>
             </form>
 
-            <div className={burgerClass} onClick={toggleMenu}>
+            {/* <div className={burgerClass} onClick={toggleMenu}>
                 <div></div>
                 <div></div>
                 <div></div>
-            </div>
+            </div> */}
             
-            <nav className={menuClass}>
-                <ul>
-                    <li>Log in</li>
-                    <li>Sign up</li>
-                    <li>API</li>
-                </ul> 
+            <nav className="containerBurger">
+                <NavDesktop/>
+                <NavMobile/>
             </nav>
         </header>
     );
