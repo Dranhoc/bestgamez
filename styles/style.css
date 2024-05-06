@@ -140,6 +140,41 @@ header .containerBurger a {
 header .containerBurger .navDesktop {
   display: none;
 }
+header .containerBurger .custom-navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 88px;
+  padding: 1.25rem;
+  background-color: #121212;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+header .containerBurger .custom-navbar ul {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0;
+}
+header .containerBurger .custom-navbar li {
+  width: 100%;
+  padding: 0.08rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(to top right, #2C2C2C, #121212, #1C1C1C);
+}
+header .containerBurger .custom-navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  background-color: #121212;
+  color: white;
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+}
+
 .fullCard__container {
   display: flex;
   justify-content: center;
