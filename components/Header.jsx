@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import NavDesktop from './NavDesktop.jsx';
-import NavMobile from './NavMobile.jsx';
+import NavDesktop from './NavDesktop';
+import NavMobile from './NavMobile';
 
 function Header() {
     const [searchTerm, setSearchTerm] = useState('');
