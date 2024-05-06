@@ -80,6 +80,15 @@ body {
   justify-content: center;
 }
 
+h1 {
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 37px;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -150,6 +159,7 @@ header .containerBurger .custom-navbar {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 2;
+  height: 100vh;
 }
 header .containerBurger .custom-navbar ul {
   display: grid;
@@ -296,4 +306,20 @@ header .containerBurger .custom-navbar a {
   .fullCard__container .fullCard .fullCard__likes-viewMore .viewMore {
     visibility: hidden;
   }
+}
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-inline: 4%;
+  font-family: "Kanit", sans-serif;
+  padding-bottom: 10px;
+}
+.filters :focus-visible {
+  outline: none;
+}
+.filters .custom-select {
+  background-color: #2C2C2C;
+  color: white;
+  border-radius: 10px;
+  height: 40px;
 }/*# sourceMappingURL=style.css.map */
