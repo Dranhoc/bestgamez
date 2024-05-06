@@ -12,21 +12,18 @@ function Api() {
     axios.get(`https://api.rawg.io/api/games?${myKey}&page=2`)
       .then((res) => {
         const newData = [];
-        const genres = [];
         res.data.results.forEach(data => {
           newData.push({
             gameName: data.name,
             metacritic: data.metacritic,
             backgroundImage: data.background_image,
             suggestionsCount: data.suggestions_count,
-            releaseDate: data.released
-          })
-          data.genres.forEach(genre => {
-            genres.push(genre.name)
-            // console.log(genre.name)
+            releaseDate: data.released,
+            rating:data.rating*4 + "/20",
+            genres: data.genres.map(genre => genre.name + " ")
           });
           setGameData(newData);
-          setGenres(genres)
+          
         });
       });
     }, []);
@@ -43,7 +40,8 @@ function Api() {
           backgroundImage={data.backgroundImage}
           suggestionsCount={data.suggestionsCount}
           releaseDate={data.releaseDate}
-          genres={genres}
+          genres={data.genres}
+          rating={data.rating}
         />
       ))}
     </section>

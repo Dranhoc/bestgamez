@@ -1,6 +1,6 @@
 
 
-function Card({ gameName, backgroundImage, metacritic, suggestionsCount, releaseDate, genres} ){
+function Card({ gameName, backgroundImage, metacritic, suggestionsCount, releaseDate, genres, rating} ){
  
   return (
   <div className='fullCard__container'>
@@ -39,14 +39,13 @@ function Card({ gameName, backgroundImage, metacritic, suggestionsCount, release
           <h4>Genres :</h4>
           <div className="article__genres--genres">
             <p>{ genres }</p>
-            {/* <p>RPG</p> */}
           </div>
         </div>
           <hr />
           <div className="article__chart">
-          <h4>Chart :</h4>
+          <h4>BG Rating :</h4>
           <div className="article__genres--chart">
-            <p>#1 Top 2023</p>
+            <p>{ rating }</p>
           </div>
         </div>
       </article>

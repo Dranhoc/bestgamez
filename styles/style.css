@@ -248,6 +248,7 @@ header .containerBurger .navDesktop {
 .fullCard__container .fullCard .fullCard__article .article__genres--genres {
   display: flex;
   gap: 0.3rem;
+  text-align: right;
 }
 .fullCard__container .fullCard:hover .fullCard__article {
   max-height: none;
