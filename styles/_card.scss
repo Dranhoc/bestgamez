@@ -1,7 +1,6 @@
 .fullCard__container{
   display : flex;
   justify-content: center;
-  // margin-inline: 7%;
   color : lightgray;
   font-family: var(--ff-Kanit);
 
@@ -36,14 +35,21 @@
 
     .fullCard__platforms-metascore{
       display:flex;
-      height:25px;
+      justify-content: space-between;
       margin-top: 1rem;
       .platforms{
         display:flex;
+        align-content: center;
         gap:0.5rem;
         filter: var(--filter-lightgrey); 
+        img{
+          height:18px;
+          margin-block:auto;
+        }
+        
       }
       .metascore{
+        
         margin-block: auto;
         padding-inline: 0.5rem;
         border:solid 0.8px greenyellow;

@@ -1,6 +1,6 @@
 
 
-function Card({ gameName, backgroundImage, metacritic, suggestionsCount, releaseDate, genres, rating} ){
+function Card({ gameName, backgroundImage, metacritic, suggestionsCount, releaseDate, genres, rating, platforms} ){
  
   return (
   <div className='fullCard__container'>
@@ -10,9 +10,10 @@ function Card({ gameName, backgroundImage, metacritic, suggestionsCount, release
       </div>
       <div className="fullCard__platforms-metascore">
         <div className="platforms">
-          <img src="./assets/ico/PC.svg" alt="PC" />
-          <img src="./assets/ico/playstation.svg" alt="PS" />
-          <img src="./assets/ico/xbox.svg" alt="xbox" />
+        {platforms.map((platform, index) => (
+          <img key={index} src={`./assets/ico/${platform}.svg`} alt={platform} />
+              
+        ))}
         </div>
         <div className="metascore">
           <p>{ metacritic }</p>
