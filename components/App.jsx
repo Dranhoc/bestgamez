@@ -12,7 +12,7 @@ function App() {
 
   return <>
     <Header />
-    <h1>New and trending</h1>
+    <h1>New and Trending</h1>
     <Filters/>
     <Api/>
  
