@@ -3,6 +3,7 @@
 function Card({ gameName, backgroundImage, metacritic, suggestionsCount, releaseDate, genres, rating, platforms} ){
  
   return (
+  
   <div className='fullCard__container'>
   <div className="fullCard">
       <div className="fullCard__image">
@@ -52,6 +53,7 @@ function Card({ gameName, backgroundImage, metacritic, suggestionsCount, release
       </article>
   </div>
   </div>
+  
 
   )
 }

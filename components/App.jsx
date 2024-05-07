@@ -1,9 +1,8 @@
-// import React, {useEffect} from 'react';
 import Api from './Api.jsx';
 import Header from './Header.jsx';
 import Filters from './Filters.jsx';
-// import MainContent from './MainContent.jsx';
-// import Card from './Card.jsx'
+import { BrowserRouter as Router } from "react-router-dom"
+
 
 
 
@@ -11,10 +10,12 @@ import Filters from './Filters.jsx';
 function App() {
 
   return <>
+  <Router>
     <Header />
     <h1>New and Trending</h1>
     <Filters/>
-    <Api/>
+    
+  </Router>
  
   </>
   

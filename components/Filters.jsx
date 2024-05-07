@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Api from './Api.jsx';
 
 function Filters() {
     const [selectedValue, setSelectedValue] = useState({});
@@ -11,6 +12,7 @@ function Filters() {
     };
 
     return (
+      <>
         <section className='filters'>
 
             <div>
@@ -63,6 +65,8 @@ function Filters() {
 
 
         </section>
+        <Api />
+        </>
     )
 }
 

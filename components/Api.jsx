@@ -8,7 +8,7 @@ function Api() {
   const myKey = "key=13a14486a9a544b2b8adbff1d336d9ad";
   const platform = "&platforms=186";
   const genres = "&genres=indie";
-  const ordering = "&ordering=-metacritic";
+  const ordering = "&ordering=-rating";
 
 
   useEffect(() => {
@@ -51,6 +51,7 @@ function Api() {
         />
       ))}
     </section>
+
   );
 }
 
