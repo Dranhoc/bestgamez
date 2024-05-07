@@ -1,5 +1,5 @@
 // import React, {useEffect} from 'react';
-import Api from './Api.jsx';
+// import Api from './Api.jsx';
 import Header from './Header.jsx';
 import Filters from './Filters.jsx';
 // import MainContent from './MainContent.jsx';
@@ -14,7 +14,6 @@ function App() {
     <Header />
     <h1>New and Trending</h1>
     <Filters/>
-    <Api/>
  
   </>
   
