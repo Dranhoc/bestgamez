@@ -19,8 +19,6 @@ function Filters() {
                     <option value="date_added">Date added</option>
                     <option value="name">Name</option>
                     <option value="release_date">Release date</option>
-                    <option value="popularity">Popularity</option>
-                    <option value="average_rating">Average rating</option>
                 </select>
             </div>
 
