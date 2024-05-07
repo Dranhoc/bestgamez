@@ -332,4 +332,9 @@ header .containerBurger .custom-navbar a {
 }
 .filters option {
   text-align: center;
+}
+
+.gameDetails p {
+  color: white;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */

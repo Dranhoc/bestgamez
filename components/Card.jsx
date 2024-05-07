@@ -1,11 +1,21 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Card({ gameId, gameName, backgroundImage, metacritic, suggestionsCount, releaseDate, genres, rating, platforms }) {
+function Card({ gameId, gameName, backgroundImage, metacritic, suggestionsCount, releaseDate, genres, platforms }) {
   const navigate = useNavigate();
 
   const handleViewMoreClick = () => {
-    navigate(`/game/${gameId}`);
+  const dataString = btoa(JSON.stringify({
+      gameId,
+      gameName,
+      backgroundImage,
+      metacritic,
+      suggestionsCount,
+      releaseDate,
+      genres,
+      platforms
+    }));
+    navigate(`/game/${gameId}?data=${dataString}`);
   };
 
 
@@ -52,9 +62,9 @@ function Card({ gameId, gameName, backgroundImage, metacritic, suggestionsCount,
         </div>
           <hr />
           <div className="article__chart">
-          <h4>BG Rating :</h4>
+          <h4>Game ID :</h4>
           <div className="article__genres--chart">
-            <p>{ rating }</p>
+            <p>{ gameId }</p>
           </div>
         </div>
       </article>
