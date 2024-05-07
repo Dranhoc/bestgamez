@@ -6,15 +6,13 @@ function Api() {
   const [gameData, setGameData] = useState([]);
 
   const myKey = "key=13a14486a9a544b2b8adbff1d336d9ad";
-  let param1 = "";
-  let param2 = "";
-  let param3 = "";
+  const platform = "&platforms=186";
+  const genres = "&genres=indie";
+  const ordering = "&ordering=-metacritic";
 
-  // pour tester les param
-  param1 = "&page=2"
 
   useEffect(() => {
-    axios.get(`https://api.rawg.io/api/games?${myKey}${param1}${param2}${param3}`)
+    axios.get(`https://api.rawg.io/api/games?${myKey}${platform}${genres}${ordering}`)
       .then((res) => {
         const newData = [];
         res.data.results.forEach(data => {
