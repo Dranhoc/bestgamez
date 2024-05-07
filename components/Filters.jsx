@@ -1,25 +1,19 @@
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Api from './Api';
 
 function Filters() {
     const [orderBy, setOrderBy] = useState('');
     const [platform, setPlatform] = useState('');
     const [gameType, setGameType] = useState('');
-
-    useEffect(() => {
-        if (orderBy !== '' || platform !== '' || gameType !== '') {
-            console.log('Filters updated:', { orderBy, platform, gameType });
-            return <Api platform={platform} genres={gameType} ordering={orderBy} />;
-        }
-    }, [orderBy, platform, gameType])
+    
 
     const handleFilterChange = (filterType, value) => {
         switch (filterType) {
             case 'orderBy':
-                setOrderBy('&ordering=-' + value);
+                setOrderBy('&ordering=' + value);
                 break;
             case 'platform':
-                setPlatform('&platforms=' + value);       
+                setPlatform('&platforms=' + value);
                 break;
             case 'gameType':
                 setGameType('&genres=' + value);

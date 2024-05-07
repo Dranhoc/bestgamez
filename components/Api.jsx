@@ -32,7 +32,7 @@ function Api({platform, genres, ordering}) {
           
         });
       });
-    }, []);
+    }, [platform, genres, ordering]);
  
 
   return (
