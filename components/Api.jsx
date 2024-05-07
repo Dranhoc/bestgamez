@@ -23,7 +23,6 @@ function Api({platform, genres, ordering}) {
             backgroundImage: data.background_image,
             suggestionsCount: data.suggestions_count,
             releaseDate: data.released,
-            rating:data.rating*4 + "/20",
             genres: data.genres.map(genre => genre.name + " "),
             platforms: data.parent_platforms.map(platform => platform.platform.name)
           });

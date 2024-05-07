@@ -80,8 +80,6 @@ function Filters() {
                 </select>
             </div>
 
-                
-
             </section>
             <Api
                 platform={platform}

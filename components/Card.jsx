@@ -1,7 +1,24 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+function Card({ gameId, gameName, backgroundImage, metacritic, suggestionsCount, releaseDate, genres, platforms }) {
+  const navigate = useNavigate();
+
+  const handleViewMoreClick = () => {
+  const dataString = btoa(JSON.stringify({
+      gameId,
+      gameName,
+      backgroundImage,
+      metacritic,
+      suggestionsCount,
+      releaseDate,
+      genres,
+      platforms
+    }));
+    navigate(`/game/${gameId}?data=${dataString}`);
+  };
 
 
-function Card({ gameName, gameId, backgroundImage, metacritic, suggestionsCount, releaseDate, genres, rating, platforms} ){
- 
   return (
   
   <div className='fullCard__container'>
@@ -28,7 +45,7 @@ function Card({ gameName, gameId, backgroundImage, metacritic, suggestionsCount,
           <img id='likes' src="./assets/ico/heart-like.svg" alt="like" />
           <p className="likesCounter">{ suggestionsCount }</p>
         </div>
-        <a href="#" className="viewMore">View more</a>
+        <a href="#" className="viewMore" onClick={handleViewMoreClick}>View more</a>
       </div>
       <article className="fullCard__article">
         <div className="article__releaseDate">
