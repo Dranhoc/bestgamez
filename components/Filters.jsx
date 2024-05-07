@@ -1,14 +1,26 @@
 import { useState } from 'react';
-import Api from './Api.jsx';
+import Api from './Api';
 
 function Filters() {
-    const [selectedValue, setSelectedValue] = useState({});
+    const [orderBy, setOrderBy] = useState('');
+    const [platform, setPlatform] = useState('');
+    const [gameType, setGameType] = useState('');
 
-
-
-    function handleChange(e) {
-        setSelectedValue(e.target.value);
-        console.log(selectedValue);
+    const handleFilterChange = (filterType, value) => {
+        switch (filterType) {
+            case 'orderBy':
+                setOrderBy(value);
+                break;
+            case 'platform':
+                setPlatform(value);
+                break;
+            case 'gameType':
+                setGameType(value);
+                break;
+            default:
+                break;
+        }
+        fetchData(orderBy, platform, gameType);
     };
 
     return (
@@ -16,18 +28,16 @@ function Filters() {
         <section className='filters'>
 
             <div>
-                <select onChange={handleChange} className='custom-select'>
+                <select onChange={(e) => handleFilterChange('orderBy', e.target.value)} className='custom-select'>
                     <option value="" disabled selected>Order by...</option>
                     <option value="date_added">Date added</option>
                     <option value="name">Name</option>
                     <option value="release_date">Release date</option>
-                    <option value="popularity">Popularity</option>
-                    <option value="average_rating">Average rating</option>
                 </select>
             </div>
 
             <div>
-                <select onChange={handleChange} className='custom-select'>
+                <select onChange={(e) => handleFilterChange('platform', e.target.value)} className='custom-select'>
                     <option value="" disabled selected>Platforms</option>
                     <option value="pc">PC</option>
                     <optgroup label="Playstation">
@@ -47,9 +57,9 @@ function Filters() {
             </div>
 
             <div>
-                <select onChange={handleChange} className='custom-select'>
+                <select onChange={(e) => handleFilterChange('genre', e.target.value)} className='custom-select'>
                     
-                        <option value="" disabled selected>Type of game</option>
+                        <option value="" disabled selected>Genres</option>
                         <option value="free_online_games">Free Online Games</option>
                         <option value="action">Action</option>
                         <option value="strategy">Strategy</option>
@@ -63,6 +73,11 @@ function Filters() {
                 </select>
             </div>
 
+            <Api
+             platform={"&platforms=186"}
+             genres={"&genres=indie"}
+             ordering={"&ordering=-metacritic"}
+             />
 
         </section>
         <Api />
