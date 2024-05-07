@@ -1,21 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Api from './Api';
 
 function Filters() {
-    const [orderBy, setOrderBy] = useState('&ordering=-metacritic');
-    const [platform, setPlatform] = useState('&platforms=186');
-    const [gameType, setGameType] = useState('&genres=indie');
+    const [orderBy, setOrderBy] = useState('');
+    const [platform, setPlatform] = useState('');
+    const [gameType, setGameType] = useState('');
+
+    useEffect(() => {
+        if (orderBy !== '' || platform !== '' || gameType !== '') {
+            console.log('Filters updated:', { orderBy, platform, gameType });
+            return <Api platform={platform} genres={gameType} ordering={orderBy} />;
+        }
+    }, [orderBy, platform, gameType])
 
     const handleFilterChange = (filterType, value) => {
         switch (filterType) {
             case 'orderBy':
-                setOrderBy(value);
+                setOrderBy('&ordering=-' + value);
                 break;
             case 'platform':
-                setPlatform(value);       
+                setPlatform('&platforms=' + value);       
                 break;
             case 'gameType':
-                setGameType(value);
+                setGameType('&genres=' + value);
                 break;
             default:
                 break;
@@ -23,36 +30,41 @@ function Filters() {
     };
 
     return (
-      <>    
-        <div>
+        <>    
             <section className='filters'>
 
             <div>
                 <select onChange={(e) => handleFilterChange('orderBy', e.target.value)} className='custom-select'>
                     <option value="" disabled selected>Order by...</option>
-                    <option value="date_added">Date added</option>
+                    <option value="added">Date added</option>
                     <option value="name">Name</option>
-                    <option value="release_date">Release date</option>
+                    <option value="released">Release date</option>
                 </select>
             </div>
 
             <div>
                 <select onChange={(e) => handleFilterChange('platform', e.target.value)} className='custom-select'>
                     <option value="" disabled selected>Platforms</option>
-                    <option value="pc">PC</option>
+                    <option value="4">PC</option>
                     <optgroup label="Playstation">
-                        <option value="ps4">Playstation 4</option>
-                        <option value="ps5">Playstation 5</option>
+                        <option value="18">Playstation 4</option>
+                        <option value="187">Playstation 5</option>
                     </optgroup>
                     <optgroup label="Xbox">
-                        <option value="ps4">Xbox One</option>
-                        <option value="ps5">Xbox Series S/X</option>
+                        <option value="1">Xbox One</option>
+                        <option value="186">Xbox Series S/X</option>
                     </optgroup>
-                    <option value="ios">iOS</option>
-                    <option value="android">Android</option>
-                    <option value="apple_macintosh">Apple Macintosh</option>
-                    <option value="linux">Linux</option>
-                    <option value="Nintendo">Nintendo</option>
+                    <option value="3">iOS</option>
+                    <option value="21">Android</option>
+                    <option value="5">Apple Macintosh</option>
+                    <option value="6">Linux</option>
+                    <optgroup label="Nintendo">
+                        <option value="83">Nintendo 64</option>
+                        <option value="9">Nintendo DS</option>
+                        <option value="13">Nintendo DSi</option>
+                        <option value="8">Nintendo 3DS</option>
+                        <option value="7">Nintendo Switch</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -60,15 +72,16 @@ function Filters() {
                 <select onChange={(e) => handleFilterChange('genre', e.target.value)} className='custom-select'>
                     
                         <option value="" disabled selected>Genres</option>
-                        <option value="free_online_games">Free Online Games</option>
-                        <option value="action">Action</option>
-                        <option value="strategy">Strategy</option>
-                        <option value="rpg">RPG</option>
-                        <option value="shooter">Shooter</option>
-                        <option value="adventure">Adventure</option>
-                        <option value="puzzle">Puzzle</option>
-                        <option value="racing">Racing</option>
-                        <option value="sports">Sports</option>
+                        <option value="51">Indie</option>
+                        <option value="4">Action</option>
+                        <option value="10">Strategy</option>
+                        <option value="5">RPG</option>
+                        <option value="2">Shooter</option>
+                        <option value="3">Adventure</option>
+                        <option value="7">Puzzle</option>
+                        <option value="1">Racing</option>
+                        <option value="15">Sports</option>
+                        <option value="14">Simulation</option>
 
                 </select>
             </div>
@@ -81,8 +94,7 @@ function Filters() {
                 genres={gameType}
                 ordering={orderBy}
             />
-        </div>
-            
+        
         </>
     )
 }
