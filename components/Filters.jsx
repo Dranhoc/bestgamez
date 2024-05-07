@@ -2,9 +2,9 @@ import { useState } from 'react';
 import Api from './Api';
 
 function Filters() {
-    const [orderBy, setOrderBy] = useState('');
-    const [platform, setPlatform] = useState('');
-    const [gameType, setGameType] = useState('');
+    const [orderBy, setOrderBy] = useState('&ordering=-metacritic');
+    const [platform, setPlatform] = useState('&platforms=186');
+    const [gameType, setGameType] = useState('&genres=indie');
 
     const handleFilterChange = (filterType, value) => {
         switch (filterType) {
@@ -12,7 +12,7 @@ function Filters() {
                 setOrderBy(value);
                 break;
             case 'platform':
-                setPlatform(value);
+                setPlatform(value);       
                 break;
             case 'gameType':
                 setGameType(value);
@@ -20,12 +20,11 @@ function Filters() {
             default:
                 break;
         }
-        fetchData(orderBy, platform, gameType);
     };
 
     return (
-      <>
-        <section className='filters'>
+      <>    
+            <section className='filters'>
 
             <div>
                 <select onChange={(e) => handleFilterChange('orderBy', e.target.value)} className='custom-select'>
@@ -72,13 +71,14 @@ function Filters() {
 
                 </select>
             </div>
-        </section>
-      
+
+            </section>
             <Api
-             platform={"&platforms=186"}
-             genres={"&genres=indie"}
-             ordering={"&ordering=-metacritic"}
-             />
+                platform={platform}
+                genres={gameType}
+                ordering={orderBy}
+            />
+            
         </>
     )
 }

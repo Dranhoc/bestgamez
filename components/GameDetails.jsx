@@ -1,6 +1,6 @@
 import React from "react";
 
-function GameDetails(id){
+function GameDetails({gameName}){
 
 
 
@@ -13,4 +13,4 @@ function GameDetails(id){
   )
 }
 
-export default Filters;
+export default GameDetails;

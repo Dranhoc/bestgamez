@@ -309,11 +309,6 @@ header .containerBurger .custom-navbar a {
   margin-bottom: 1rem;
 }
 
-@media (min-width: 1440px) {
-  .fullCard__container .fullCard .fullCard__likes-viewMore .viewMore {
-    visibility: hidden;
-  }
-}
 .filters {
   display: flex;
   align-items: center;
