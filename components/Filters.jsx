@@ -72,15 +72,13 @@ function Filters() {
 
                 </select>
             </div>
-
+        </section>
+      
             <Api
              platform={"&platforms=186"}
              genres={"&genres=indie"}
              ordering={"&ordering=-metacritic"}
              />
-
-        </section>
-        <Api />
         </>
     )
 }
