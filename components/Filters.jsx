@@ -11,12 +11,14 @@ function Filters() {
         switch (filterType) {
             case 'orderBy':
                 setOrderBy('&ordering=' + value);
+                console.log(orderBy);
                 break;
             case 'platform':
                 setPlatform('&platforms=' + value);
                 break;
             case 'gameType':
                 setGameType('&genres=' + value);
+                console.log(gameType);
                 break;
             default:
                 break;
