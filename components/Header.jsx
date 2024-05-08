@@ -17,7 +17,7 @@ function Header({searchTerm, setSearchTerm}) {
     return (
         <header>
             <div className="containerLogo">
-                <img src="../assets/ico/logo.svg" alt="Logo Joystick" className="logoImage" />
+                <a href="../"><img src="../assets/ico/logo.svg" alt="Logo Joystick" className="logoImage" /></a>
                 <p className='logoText'>BestGamez</p>
             </div>
             
