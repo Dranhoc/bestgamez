@@ -1,6 +1,72 @@
 .gameDetails{
-  p{
-    color:white;
-    font-size: 20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-inline:7%;
+
+  .detail__card{
+    display:flex;
+    justify-self: center;
+    border-radius:15px;
+    background-color: #2c2c2c;
+  
   }
+    .gameDescription{
+      display:flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-inline: 2rem;
+      margin-block: 2rem;
+    
+    }
+  }
+  .platforms__metascore{
+    display:flex;
+    .platforms{
+      display: flex;
+      height:30px;
+      filter: var(--filter-lightgrey);
+      gap:0.5rem;
+    }
+  
+    .metascore{
+      margin-block: auto;
+      padding-inline: 0.5rem;
+      border:solid 0.8px greenyellow;
+      border-radius:4px;
+      width:50px;
+      p{
+       
+        text-align: center;
+        color:greenyellow;
+      }
+    }
+  }
+.carousel-root{
+  margin-block:2rem;
+  margin-left:2rem;
+  .thumbs-wrapper{
+    display:flex;
+    justify-content: center;
+  }
+}
+  .screenshots{
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    gap:1rem; 
+}
+
+@media (max-width: 1200px){
+  .gameDetails{
+    .detail__card{
+      flex-direction: column;
+    
+  }
+  .carousel-root{
+    margin-right:2rem;
+    margin-bottom: 0;
+  }
+
+}
 }

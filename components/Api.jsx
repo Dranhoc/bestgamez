@@ -5,7 +5,8 @@ import Card from "./Card.jsx"
 function Api({platform, genres, ordering}) {
   const [gameData, setGameData] = useState([]);
 
-  const myKey = "key=13a14486a9a544b2b8adbff1d336d9ad";
+  const myKey = import.meta.env.VITE_API_KEY
+
   // const platform = "&platforms=186";
   // const genres = "&genres=indie";
   // const ordering = "&ordering=-metacritic";

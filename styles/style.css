@@ -91,6 +91,12 @@ h1 {
   line-height: 60px;
 }
 
+p {
+  color: white;
+  font-size: 20px;
+  font-family: "Kanit", sans-serif;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -334,7 +340,69 @@ header .containerBurger .custom-navbar a {
   text-align: center;
 }
 
-.gameDetails p {
-  color: white;
-  font-size: 20px;
+.gameDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-inline: 7%;
+}
+.gameDetails .detail__card {
+  display: flex;
+  justify-self: center;
+  border-radius: 15px;
+  background-color: #2c2c2c;
+}
+.gameDetails .gameDescription {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-inline: 2rem;
+  margin-block: 2rem;
+}
+
+.platforms__metascore {
+  display: flex;
+}
+.platforms__metascore .platforms {
+  display: flex;
+  height: 30px;
+  filter: var(--filter-lightgrey);
+  gap: 0.5rem;
+}
+.platforms__metascore .metascore {
+  margin-block: auto;
+  padding-inline: 0.5rem;
+  border: solid 0.8px greenyellow;
+  border-radius: 4px;
+  width: 50px;
+}
+.platforms__metascore .metascore p {
+  text-align: center;
+  color: greenyellow;
+}
+
+.carousel-root {
+  margin-block: 2rem;
+  margin-left: 2rem;
+}
+.carousel-root .thumbs-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.screenshots {
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  gap: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .gameDetails .detail__card {
+    flex-direction: column;
+  }
+  .gameDetails .carousel-root {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
