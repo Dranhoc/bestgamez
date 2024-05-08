@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from 'react';
 import Card from "./Card.jsx"
 
-function Api({platform, genres, ordering}) {
+function Api({platform, genres, ordering, searchTerm}) {
   const [gameData, setGameData] = useState([]);
 
   const myKey = import.meta.env.VITE_API_KEY
@@ -13,7 +13,7 @@ function Api({platform, genres, ordering}) {
 
 
    useEffect(() => {
-    axios.get(`https://api.rawg.io/api/games?key=${myKey}${platform}${genres}${ordering}`)
+    axios.get(`https://api.rawg.io/api/games?key=${myKey}${platform}${genres}${ordering}${searchTerm}`)
       .then((res) => {
         const newData = [];
         res.data.results.forEach(data => {
@@ -32,7 +32,7 @@ function Api({platform, genres, ordering}) {
           });
         setGameData(newData);
         });
-    }, [platform, genres, ordering]);
+    }, [platform, genres, ordering, searchTerm]);
 
   return (
     

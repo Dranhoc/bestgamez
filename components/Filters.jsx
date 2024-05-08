@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Api from './Api';
 
-function Filters() {
+function Filters({ searchTerm }) {
     const [orderBy, setOrderBy] = useState('');
     const [platform, setPlatform] = useState('');
     const [gameType, setGameType] = useState('');
-    
 
     const handleFilterChange = (filterType, value) => {
         switch (filterType) {
@@ -95,6 +94,7 @@ function Filters() {
                 platform={platform}
                 genres={gameType}
                 ordering={orderBy}
+                searchTerm={'&search='+searchTerm}
             />
         
         </>

@@ -2,7 +2,7 @@ import Header from './Header.jsx';
 import Filters from './Filters.jsx';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom'; 
 import { Route, Routes } from 'react-router-dom';
-import React from 'react';
+import React, {useState} from 'react';
 import GameDetails from './GameDetails.jsx';
 
 function App() {
@@ -12,15 +12,20 @@ function App() {
     </Router>
   );
 }
+
 function AppContent() {
   const location = useLocation(); 
+  const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <>
-      <Header />
+      <Header
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
       {location.pathname === '/' && <h1>New and Trending</h1>} 
       <Routes>
-        <Route path="/" element={<Filters />} />
+        <Route path="/" element={<Filters searchTerm={searchTerm}/>} />
         <Route path="/game/:id" element={<GameDetails />} />
       </Routes>
     </>
