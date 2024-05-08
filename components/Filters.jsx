@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import Api from './Api';
 
-function Filters() {
+function Filters({ searchTerm }) {
     const [orderBy, setOrderBy] = useState('');
     const [platform, setPlatform] = useState('');
     const [gameType, setGameType] = useState('');
-    
 
     const handleFilterChange = (filterType, value) => {
         switch (filterType) {
             case 'orderBy':
-                setOrderBy('&ordering=' + value);
-                console.log(orderBy);
+                if (value == 'released') {
+                    setOrderBy('&ordering=-released');
+                } else if (value == 'added') {
+                    setOrderBy('&ordering=-added');
+                } else {
+                    setOrderBy('&ordering=name');
+                }
                 break;
             case 'platform':
+                console.log(platform);
                 setPlatform('&platforms=' + value);
+                
                 break;
             case 'gameType':
-                setGameType('&genres=' + value);
                 console.log(gameType);
+                setGameType('&genres=' + value);
+                
                 break;
             default:
                 break;
@@ -65,7 +72,7 @@ function Filters() {
             </div>
 
             <div>
-                <select onChange={(e) => handleFilterChange('genre', e.target.value)} className='custom-select'>
+                <select onChange={(e) => handleFilterChange('gameType', e.target.value)} className='custom-select'>
                     
                         <option value="" disabled selected>Genres</option>
                         <option value="51">Indie</option>
@@ -87,6 +94,7 @@ function Filters() {
                 platform={platform}
                 genres={gameType}
                 ordering={orderBy}
+                searchTerm={'&search='+searchTerm}
             />
         
         </>
