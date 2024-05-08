@@ -37,6 +37,13 @@ function GameDetails(){
                 
           ))}
       </div>
+      <div className="screenshots">
+      {gameData.screenshots.map((screenshot, index) => (
+            <img key={index} src={screenshot} alt={detailData.gameName + " screenshot"} />
+                
+          ))}
+
+      </div>
       <p>Game Name: {gameData.gameName}</p>
       <p>Metacritic: {gameData.metacritic}</p>
     </section>

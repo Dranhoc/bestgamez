@@ -10,7 +10,7 @@ function Filters() {
     const handleFilterChange = (filterType, value) => {
         switch (filterType) {
             case 'orderBy':
-                setOrderBy('&ordering=' + value);
+                setOrderBy('&ordering=-' + value);
                 break;
             case 'platform':
                 setPlatform('&platforms=' + value);
