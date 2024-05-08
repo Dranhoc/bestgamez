@@ -17,20 +17,23 @@ function GameDetails(){
  
 
   useEffect(() => {
-    axios.get(`https://api.rawg.io/api/games/${id}?${myKey}`)
+    axios.get(`https://api.rawg.io/api/games/${id}?key=${myKey}`)
       .then((res) => {
         const data = res.data;
         setDetailData({
           gameId: data.id,
           gameName: data.name,
           gameDescription: data.description_raw.split('Español')[0].trim(),
+          gameDev:data.developers.map(dev => dev.name + ". "),
+          gameTags:data.tags.map(tag => " " + tag.name + " ")
         });
       })
   }, [id]);
   
   return(
     <>
-      <h1>{detailData.gameName}, ID : {detailData.gameId}</h1>
+      <h1>{detailData.gameName}</h1>
+      <h2 className ="developers" >Developed by : { detailData.gameDev }</h2>
     <section className="gameDetails">
       <div className="detail__card">
         <div className="screenshots">
@@ -38,26 +41,28 @@ function GameDetails(){
           {gameData.screenshots.map((screenshot, index) => (
                 <img key={index} src={screenshot} alt={detailData.gameName + " screenshot"} />      
               ))}
+              
           </Carousel>
         </div>
         <div className="gameDescription">
           <p>{detailData.gameDescription}</p>
+          <div className="comments">
+          <a href="">{detailData.gameTags + "  "} </a>
+            </div>
           <div className="platforms__metascore">
             <div className="platforms">
                 {gameData.platforms.map((platform, index) => (
                     <img key={index} src={`../assets/ico/${platform}.svg`} alt={platform} />    
                   ))}
-            </div>
+            </div>  
             <div className="metascore">
               <p>{gameData.metacritic}</p>
             </div>
           </div>
         </div>
-      </div>
-        
-      
-      
+      </div>  
     </section>
+
       
     </>
   );

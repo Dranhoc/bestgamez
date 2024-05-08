@@ -13,7 +13,7 @@ function Api({platform, genres, ordering}) {
 
 
   useEffect(() => {
-    axios.get(`https://api.rawg.io/api/games?${myKey}${platform}${genres}${ordering}`)
+    axios.get(`https://api.rawg.io/api/games?key=${myKey}${platform}${genres}${ordering}`)
       .then((res) => {
         const newData = [];
         res.data.results.forEach(data => {

@@ -97,6 +97,11 @@ p {
   font-family: "Kanit", sans-serif;
 }
 
+h4, h2 {
+  font-size: 20px;
+  font-family: "Kanit", sans-serif;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -246,6 +251,9 @@ header .containerBurger .custom-navbar a {
   border-radius: 4px;
   color: greenyellow;
 }
+.fullCard__container .fullCard .fullCard__platforms-metascore .metascore p {
+  color: greenyellow;
+}
 .fullCard__container .fullCard .fullCard__Title {
   text-align: center;
 }
@@ -340,6 +348,14 @@ header .containerBurger .custom-navbar a {
   text-align: center;
 }
 
+.developers {
+  color: white;
+  text-align: center;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
 .gameDetails {
   display: flex;
   flex-direction: column;
@@ -358,6 +374,15 @@ header .containerBurger .custom-navbar a {
   flex-direction: column;
   margin-inline: 2rem;
   margin-block: 2rem;
+}
+.gameDetails .gameDescription .comments {
+  display: flex;
+  justify-content: space-between;
+}
+.gameDetails .gameDescription .comments a {
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  color: greenyellow;
 }
 
 .platforms__metascore {

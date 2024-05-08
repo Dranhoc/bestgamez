@@ -1,3 +1,10 @@
+.developers{
+  color:white;
+  text-align: center;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
 .gameDetails{
   display:flex;
   flex-direction: column;
@@ -17,6 +24,16 @@
       flex-direction: column;
       margin-inline: 2rem;
       margin-block: 2rem;
+
+      .comments{
+        display:flex;
+        justify-content: space-between;
+        a{
+          font-family: "Kanit", sans-serif;
+          text-align: center;
+          color:greenyellow
+        }
+      }
     
     }
   }
