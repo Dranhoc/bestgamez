@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Card({ gameId, gameName, backgroundImage, metacritic, suggestionsCount, releaseDate, genres, platforms }) {
+function Card({ gameId, gameName, backgroundImage, metacritic, suggestionsCount, releaseDate, genres, platforms, screenshots }) {
   const navigate = useNavigate();
 
   const handleViewMoreClick = () => {
@@ -13,7 +13,8 @@ function Card({ gameId, gameName, backgroundImage, metacritic, suggestionsCount,
       suggestionsCount,
       releaseDate,
       genres,
-      platforms
+      platforms,
+      screenshots
     }));
     navigate(`/game/${gameId}?data=${dataString}`);
   };

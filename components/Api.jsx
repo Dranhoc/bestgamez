@@ -24,7 +24,8 @@ function Api({platform, genres, ordering}) {
             suggestionsCount: data.suggestions_count,
             releaseDate: data.released,
             genres: data.genres.map(genre => genre.name + " "),
-            platforms: data.parent_platforms.map(platform => platform.platform.name)
+            platforms: data.parent_platforms.map(platform => platform.platform.name),
+            screenshots: data.short_screenshots.map(screenshot => screenshot.image)
           });
           setGameData(newData);
          
@@ -49,6 +50,7 @@ function Api({platform, genres, ordering}) {
           genres={data.genres}
           rating={data.rating}
           platforms={data.platforms} 
+          screenshots={data.screenshots}
         />
       ))}
     </section>
