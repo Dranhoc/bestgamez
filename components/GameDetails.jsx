@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import axios from "axios";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function GameDetails(){
 
   const { id } = useParams();
   const [detailData, setDetailData] = useState({});
-  const myKey = "key=13a14486a9a544b2b8adbff1d336d9ad";
+  const myKey = import.meta.env.VITE_API_KEY;
+
 
   const location = useLocation();
   const dataString = new URLSearchParams(location.search).get("data");
@@ -29,23 +32,31 @@ function GameDetails(){
     <>
       <h1>{detailData.gameName}, ID : {detailData.gameId}</h1>
     <section className="gameDetails">
-      <img src={gameData.backgroundImage} alt={detailData.gameName} />
-      <p>{detailData.gameDescription}</p>
-      <div className="platforms">
-        {gameData.platforms.map((platform, index) => (
-            <img key={index} src={`./assets/ico/${platform}.svg`} alt={platform} />
-                
-          ))}
+      <div className="detail__card">
+        <div className="screenshots">
+        <Carousel autoPlay infiniteLoop useKeyboardArrows dynamicHeight>
+          {gameData.screenshots.map((screenshot, index) => (
+                <img key={index} src={screenshot} alt={detailData.gameName + " screenshot"} />      
+              ))}
+          </Carousel>
+        </div>
+        <div className="gameDescription">
+          <p>{detailData.gameDescription}</p>
+          <div className="platforms__metascore">
+            <div className="platforms">
+                {gameData.platforms.map((platform, index) => (
+                    <img key={index} src={`../assets/ico/${platform}.svg`} alt={platform} />    
+                  ))}
+            </div>
+            <div className="metascore">
+              <p>{gameData.metacritic}</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="screenshots">
-      {gameData.screenshots.map((screenshot, index) => (
-            <img key={index} src={screenshot} alt={detailData.gameName + " screenshot"} />
-                
-          ))}
-
-      </div>
-      <p>Game Name: {gameData.gameName}</p>
-      <p>Metacritic: {gameData.metacritic}</p>
+        
+      
+      
     </section>
       
     </>
