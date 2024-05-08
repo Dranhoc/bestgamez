@@ -11,34 +11,33 @@ function Api({platform, genres, ordering}) {
   // const ordering = "&ordering=-metacritic";
 
 
-  useEffect(() => {
+   useEffect(() => {
     axios.get(`https://api.rawg.io/api/games?${myKey}${platform}${genres}${ordering}`)
       .then((res) => {
         const newData = [];
         res.data.results.forEach(data => {
-          newData.push({
-            gameId: data.id,
-            gameName: data.name,
-            metacritic: data.metacritic,
-            backgroundImage: data.background_image,
-            suggestionsCount: data.suggestions_count,
-            releaseDate: data.released,
-            genres: data.genres.map(genre => genre.name + " "),
-            platforms: data.parent_platforms.map(platform => platform.platform.name),
-            screenshots: data.short_screenshots.map(screenshot => screenshot.image)
+              newData.push({
+              gameId: data.id,
+              gameName: data.name,
+              metacritic: data.metacritic,
+              backgroundImage: data.background_image,
+              suggestionsCount: data.suggestions_count,
+              releaseDate: data.released,
+              genres: data.genres.map(genre => genre.name + " "),
+              platforms: data.parent_platforms.map(platform => platform.platform.name),
+              screenshots: data.short_screenshots.map(screenshot => screenshot.image)
+              });
+            
           });
-          setGameData(newData);
-         
-          
+        setGameData(newData);
         });
-      });
     }, [platform, genres, ordering]);
- 
 
   return (
     
     <section className="main__container">
       {gameData.map((data, index) => (
+        
         <Card
           key={index}
           gameId={data.gameId}
