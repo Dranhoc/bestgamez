@@ -10,4 +10,7 @@ export default defineConfig({
       preventAssignment: true,
     }),
   ],
+  build: {
+    assetsInlineLimit: 0, // Permet d'inclure toutes les images dans le bundle
+  },
 });
