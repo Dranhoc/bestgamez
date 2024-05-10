@@ -30,7 +30,7 @@ function Card({ gameId, gameName, backgroundImage, metacritic, suggestionsCount,
       <div className="fullCard__platforms-metascore">
         <div className="platforms">
         {platforms.map((platform, index) => (
-          <img key={index} src={`./assets/ico/${platform}.svg`} alt={platform} />
+          <img key={index} src={`/assets/ico/${platform}.svg`} alt={platform} />
               
         ))}
         </div>
@@ -43,7 +43,7 @@ function Card({ gameId, gameName, backgroundImage, metacritic, suggestionsCount,
       </div>
       <div className="fullCard__likes-viewMore">
         <div className="fullCard__likes">
-          <img id='likes' src="./assets/ico/heart-like.svg" alt="like" />
+          <img id='likes' src="/assets/ico/heart-like.svg" alt="like" />
           <p className="likesCounter">{ suggestionsCount }</p>
         </div>
         <a href="#" className="viewMore" onClick={handleViewMoreClick}>View more</a>
