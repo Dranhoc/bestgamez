@@ -8,8 +8,6 @@ export default defineConfig({
     replace({
       'process.env.REACT_APP_MY_KEY': JSON.stringify(process.env.REACT_APP_MY_KEY),
       preventAssignment: true,
-    }),
-    reactRefresh(),
-    reactSvgPlugin()
+    })
   ],
 });
