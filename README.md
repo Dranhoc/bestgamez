@@ -4,7 +4,7 @@
 | :------------------- |:--------------------|
 | Repository           | `EveryoneGames`     |
 | Challenge type       | `Consolidation`             |
-| Duration             | `5 days`            |
+| Duration             | `4 days`            |
 | Deadline             | `08/05/2023`        |
 | Deployment method    | `Netlify or Vercel` |
 | Group composition    | `Duo`              |
@@ -31,10 +31,6 @@ That's why you will use [Prettier](https://prettier.io) to format your code, and
 
 > 🧨 **WARNING:** disable ESLint **is not** an option!
 
-## The images
-
-![clipboard.png](_CaS1S3Bl-clipboard.png)
-![clipboard.png](XB3c9RFmG-clipboard.png)
 
 ## Must have
 
