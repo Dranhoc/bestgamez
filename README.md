@@ -1,3 +1,6 @@
+The website is available here : https://bestgamez.netlify.app/
+
+
 # EveryoneGames
 
 | Challenge Parameters | Challenge Details   |
